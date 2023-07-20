@@ -43,7 +43,8 @@ def add_point_cloud_2_ax(
     point_cloud,
     ax,
     fov_radius=GEOMETRY.fov_radius,
-    color='b'
+    color='b',
+    ring = True
 ):
     fov_radius_deg = np.rad2deg(fov_radius)
     pcl = point_cloud.copy()
@@ -54,7 +55,8 @@ def add_point_cloud_2_ax(
     min_time = pcl[:, 2].min()
     max_time = pcl[:, 2].max()
 
-    add_ring_2_ax(x=0.0, y=0.0, z=min_time, r=fov_radius_deg, ax=ax)
+    if ring = True:
+        add_ring_2_ax(x=0.0, y=0.0, z=min_time, r=fov_radius_deg, ax=ax)
     ax.set_xlim(-fov_radius_deg, fov_radius_deg)
     ax.set_ylim(-fov_radius_deg, fov_radius_deg)
     ax.set_zlim(min_time, max_time)
