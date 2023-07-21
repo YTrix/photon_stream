@@ -55,7 +55,7 @@ def add_point_cloud_2_ax(
     min_time = pcl[:, 2].min()
     max_time = pcl[:, 2].max()
 
-    if ring = True:
+    if ring == True:
         add_ring_2_ax(x=0.0, y=0.0, z=min_time, r=fov_radius_deg, ax=ax)
     ax.set_xlim(-fov_radius_deg, fov_radius_deg)
     ax.set_ylim(-fov_radius_deg, fov_radius_deg)
